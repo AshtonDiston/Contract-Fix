@@ -8,6 +8,102 @@ on_title_gain = {
 	}
 }
 
+# Re-apply contracts when a war ends to prevent war resolution from resetting levies
+# root = the attacker/defender character
+on_war_ended_attacker = {
+	on_actions = {
+		asoiaf_iron_throne_lord_paramount_contract_fix_war
+	}
+}
+
+on_war_ended_defender = {
+	on_actions = {
+		asoiaf_iron_throne_lord_paramount_contract_fix_war
+	}
+}
+
+asoiaf_iron_throne_lord_paramount_contract_fix_war = {
+	trigger = {
+		has_game_rule = asoiaf_lord_paramount_contract_fix_on
+		OR = { #only canon LP titles vassalised to the Iron Throne
+			has_title = title:e_the_north
+			has_title = title:e_the_riverlands
+			has_title = title:e_the_vale
+			has_title = title:e_the_iron_islands
+			has_title = title:e_the_westerlands
+			has_title = title:e_the_crownlands
+			has_title = title:k_dragonstone
+			has_title = title:e_the_reach
+			has_title = title:e_the_stormlands
+			has_title = title:e_dorne
+		}
+		liege ?= { has_title = title:h_the_iron_throne } #liege exists and is the Iron Throne
+		has_government = lp_feudal_government #person is Western Feudal
+	}
+	effect = {
+		if = {
+			limit = {
+				has_title = title:e_the_north
+			}
+			trigger_event = { id = asoiaf_contract_events.1 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_riverlands
+			}
+			trigger_event = { id = asoiaf_contract_events.2 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_vale
+			}
+			trigger_event = { id = asoiaf_contract_events.3 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_iron_islands
+			}
+			trigger_event = { id = asoiaf_contract_events.4 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_westerlands
+			}
+			trigger_event = { id = asoiaf_contract_events.5 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_crownlands
+			}
+			trigger_event = { id = asoiaf_contract_events.6 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:k_dragonstone
+			}
+			trigger_event = { id = asoiaf_contract_events.7 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_reach
+			}
+			trigger_event = { id = asoiaf_contract_events.8 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_the_stormlands
+			}
+			trigger_event = { id = asoiaf_contract_events.9 days = 1 }
+		}
+		if = {
+			limit = {
+				has_title = title:e_dorne
+			}
+			trigger_event = { id = asoiaf_contract_events.10 days = 1 }
+		}
+	}
+}
+
 asoiaf_iron_throne_lord_paramount_contract_fix = {
 	trigger = {
 		has_game_rule = asoiaf_lord_paramount_contract_fix_on
