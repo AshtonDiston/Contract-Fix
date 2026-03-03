@@ -1,0 +1,8 @@
+﻿l_english:
+ #Lord Paramount Contract Fix
+ rule_asoiaf_lord_paramount_contract_fix_rule:0 "Lord Paramount Contract Fix"
+ setting_asoiaf_lord_paramount_contract_fix_off:0 "Default"
+ setting_asoiaf_lord_paramount_contract_fix_on:0 "#high On#!"
+
+ setting_asoiaf_lord_paramount_contract_fix_off_desc:0 "Feudal Contracts to the Iron Throne are unchanged."
+ setting_asoiaf_lord_paramount_contract_fix_on_desc:0 "Feudal Contracts to the Iron Throne will be kept consistent over time.\n@warning_icon! #X Overwrites some Feudal Contracts upon title inheritance.#!"

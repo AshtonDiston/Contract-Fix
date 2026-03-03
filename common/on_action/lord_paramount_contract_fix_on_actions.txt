@@ -1,0 +1,93 @@
+﻿# A title is transferred to a new character
+# root = the new holder
+# scope:title = the title that changes hands
+# scope:previous_holder = previous holder. Might be dead
+on_title_gain = {
+	on_actions = {
+		asoiaf_iron_throne_lord_paramount_contract_fix
+	}
+}
+
+asoiaf_iron_throne_lord_paramount_contract_fix = {
+	trigger = {
+		has_game_rule = asoiaf_lord_paramount_contract_fix_on
+		scope:title = { #only canon LP titles vassalised to the Iron Throne
+			OR = {
+				this = title:e_the_north
+				this = title:e_the_riverlands
+				this = title:e_the_vale
+				this = title:e_the_iron_islands
+				this = title:e_the_westerlands
+				this = title:e_the_crownlands
+				this = title:k_dragonstone
+				this = title:e_the_reach
+				this = title:e_the_stormlands
+				this = title:e_dorne
+			}
+		}
+		liege ?= { has_title = title:h_the_iron_throne } #liege exists and is the Iron Throne
+		root = { has_government = lp_feudal_government } #person inheriting is Western Feudal
+	}
+	effect = {
+		if = {
+			limit = {
+				scope:title = title:e_the_north
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.1 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_riverlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.2 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_vale
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.3 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_iron_islands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.4 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_westerlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.5 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_crownlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.6 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:k_dragonstone
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.7 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_reach
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.8 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_the_stormlands
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.9 days = 1 } }
+		}
+		if = {
+			limit = {
+				scope:title = title:e_dorne
+			}
+			root = { trigger_event = { id = asoiaf_contract_events.10 days = 1 } }
+		}
+	}
+}

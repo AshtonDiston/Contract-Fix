@@ -1,0 +1,11 @@
+﻿asoiaf_lord_paramount_contract_fix_rule = {
+	default = asoiaf_lord_paramount_contract_fix_off
+	
+	asoiaf_lord_paramount_contract_fix_off = {
+		
+	}
+	
+	asoiaf_lord_paramount_contract_fix_on = {
+		
+	}
+}
